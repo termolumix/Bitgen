@@ -1,0 +1,43 @@
+#!/bin/bash
+R="\033[1;31m"
+V="\033[1;32m"
+C="\033[1;34m"
+END="\033[0m"
+chars=abcdefghijklmnopqustvwxyz123456789
+clear
+echo -e "$V[1] 8 Bit $END"
+echo -e "$V[2] 16 Bit $END"
+echo -e "$V[3] 32 Bit $END"
+echo -e "$V[4] 64 Bit $END"
+echo -e "$V[5] 128 Bit $END"
+echo -e -n "$C[*] Number of bit: $END";
+read;
+
+if [ $REPLY = "1" ];then
+for i in {1..8} ; do
+    echo -n "${chars:RANDOM%${#chars}:1}"
+done
+echo
+elif [ $REPLY = "2" ];then
+for i in {1..16} ; do
+    echo -n "${chars:RANDOM%${#chars}:1}"
+done
+echo
+elif [ $REPLY = "3" ];then
+for i in {1..32} ; do
+    echo -n "${chars:RANDOM%${#chars}:1}"
+done
+echo
+elif [ $REPLY = "4" ];then
+for i in {1..64} ; do
+    echo -n "${chars:RANDOM%${#chars}:1}"
+done
+echo
+elif [ $REPLY = "5" ];then
+for i in {1..128} ; do
+    echo -n "${chars:RANDOM%${#chars}:1}"
+done
+echo
+else
+echo -e "$R [!] Erreur $REPLY invalid argument$END"
+fi
